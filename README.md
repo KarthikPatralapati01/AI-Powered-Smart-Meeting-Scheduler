@@ -16,32 +16,32 @@ This is a conversational assistant that helps you **schedule, list, and cancel m
 
 ## 🧩 Architecture Overview
 
-+----------------------------+
-|   User Message (Prompt)   |
-+------------+-------------+
-             ↓
-+----------------------------+
-|  Gemini 1.5 Flash (LLM)    |
-|   - Natural Language       |
-|   - JSON extraction        |
-+------------+-------------+
-             ↓
-+----------------------------+
-| Structured JSON Output     |
-| (MeetingRequest format)    |
-+------------+-------------+
-             ↓
-+----------------------------+
-|  Google Calendar API       |
-|   ├─ Schedule Meeting       |
-|   ├─ List Upcoming Events   |
-|   └─ Cancel by Title        |
-+------------+-------------+
-             ↓
-+----------------------------+
-|    Gradio Chatbot UI       |
-|  (Conversational Interface)|
-+----------------------------+
++-----------------------------+
+|   User Message (Prompt)    |
++-------------+--------------+
+              ↓
++-----------------------------+
+|   Gemini 1.5 Flash (LLM)    |
+| - Natural Language Parsing  |
+| - JSON Extraction           |
++-------------+--------------+
+              ↓
++-----------------------------+
+|   Structured JSON Output    |
+|   (MeetingRequest format)   |
++-------------+--------------+
+              ↓
++-----------------------------+
+|     Google Calendar API     |
+|  ├─ Schedule Meeting        |
+|  ├─ List Upcoming Events    |
+|  └─ Cancel by Title         |
++-------------+--------------+
+              ↓
++-----------------------------+
+|     Gradio Chatbot UI       |
+|  (Conversational Interface) |
++-----------------------------+
 
 
 ---
