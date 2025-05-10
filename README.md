@@ -16,22 +16,14 @@ This is a conversational assistant that helps you **schedule, list, and cancel m
 
 ## 🧩 Architecture Overview
 
-User Message (Natural Language)
-↓
-Gemini 1.5 Flash (LLM)
-↓
-Structured JSON (MeetingRequest)
-↓
-Google Calendar API
-├── Schedule Meeting
-├── List Upcoming Events
-└── Cancel by Title
-↓
-Gradio Chatbot UI
-
-yaml
-Copy
-Edit
+flowchart TD
+    A[🗣️ User Message (Natural Language)] --> B[🤖 Gemini 1.5 Flash (LLM)]
+    B --> C[📦 JSON Output (MeetingRequest)]
+    C --> D[📅 Google Calendar API]
+    D --> D1[📌 Schedule Meeting]
+    D --> D2[📋 List Events]
+    D --> D3[❌ Cancel Meeting]
+    D --> E[💬 Gradio Chatbot UI]
 
 ---
 
@@ -54,15 +46,6 @@ Edit
 
 3. **Start chatting** in the Gradio UI. Try prompts like:
 
-schedule a 30-minute call with Alice and Bob next week
-list my events
-cancel AI-Scheduled Meeting
-confirm
-hi there
-
-yaml
-Copy
-Edit
 
 ---
 
@@ -87,14 +70,5 @@ Edit
 
 **Venkata Karthik Patralapati**  
 🎓 MS Applied Data Science  
-📫 [LinkedIn](https://www.linkedin.com/in/your-link) • [GitHub](https://github.com/your-username)
 
----
 
-## 📌 License
-
-MIT License. Free to use, share, and remix with credit.
-
----
-
-## ⭐️ Star this repo if you found it helpful!
